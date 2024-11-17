@@ -5,91 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .profile-container {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #4CAF50;
-        }
-
-        h2 {
-            color: #333;
-            margin-top: 15px;
-        }
-
-        p {
-            margin: 8px 0;
-            color: #555;
-        }
-
-        .profile-details {
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .back-button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="profile-container">
-        <!-- Menampilkan Foto Profil -->
-        <img src="/uploads/profile_photos/<?= htmlspecialchars($profile['photo'] ?? 'default-photo.jpg') ?>" alt="Profile Photo" class="profile-photo">
-        
-        <!-- Menampilkan Nama -->
-        <h2><?= htmlspecialchars($profile['name'] ?? 'Tidak tersedia') ?></h2>
-
-        <!-- Menampilkan Detail Profil -->
-        <div class="profile-details">
-            <p><strong>Umur:</strong> <?= htmlspecialchars($profile['umur'] ?? 'Tidak tersedia') ?> tahun</p>
-            <p><strong>Gender:</strong> <?= htmlspecialchars($profile['gender'] ?? 'Tidak tersedia') ?></p>
-            <p><strong>Alamat:</strong> <?= htmlspecialchars($profile['alamat'] ?? 'Tidak tersedia') ?></p>
-            <p><strong>Riwayat Pendidikan:</strong> <?= htmlspecialchars($profile['riwayat_pendidikan'] ?? 'Tidak tersedia') ?></p>
-            <p><strong>Riwayat Pekerjaan:</strong> <?= htmlspecialchars($profile['riwayat_pekerjaan'] ?? 'Tidak tersedia') ?></p>
-            <p><strong>Deskripsi:</strong> <?= htmlspecialchars($profile['deskripsi'] ?? 'Tidak tersedia') ?></p>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <!-- Container Profil -->
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-md">
+        <!-- Header dengan Background Gradient -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-800 h-24 rounded-t-lg relative">
+            <!-- Foto Profil -->
+            <img src="/uploads/profile_photos/<?= htmlspecialchars($profile['photo'] ?? 'avatar-3814049_1280.png') ?>" 
+                 alt="Profile Photo" 
+                 class="w-32 h-32 rounded-full border-4 border-white object-cover absolute -bottom-16 left-1/2 transform -translate-x-1/2">
         </div>
 
-        <!-- Tombol Back -->
-        <a href="javascript:history.back()" class="back-button">Back</a>
+        <!-- Konten Profil -->
+        <div class="pt-20 pb-8 px-6 text-center">
+            <!-- Nama dan Jabatan -->
+            <h2 class="text-2xl font-bold text-gray-800"><?= htmlspecialchars($profile['name'] ?? 'Tidak tersedia') ?></h2>
+            <p class="text-gray-500">Professional | Job Seeker</p>
+
+            <!-- Detail Profil -->
+            <div class="mt-6 text-left space-y-4">
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Umur:</span> <?= htmlspecialchars($profile['umur'] ?? 'Tidak tersedia') ?> tahun</p>
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Gender:</span> <?= htmlspecialchars($profile['gender'] ?? 'Tidak tersedia') ?></p>
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Alamat:</span> <?= htmlspecialchars($profile['alamat'] ?? 'Tidak tersedia') ?></p>
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Pendidikan:</span> <?= htmlspecialchars($profile['riwayat_pendidikan'] ?? 'Tidak tersedia') ?></p>
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Pekerjaan:</span> <?= htmlspecialchars($profile['riwayat_pekerjaan'] ?? 'Tidak tersedia') ?></p>
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Deskripsi:</span> <?= htmlspecialchars($profile['deskripsi'] ?? 'Tidak tersedia') ?></p>
+            </div>
+
+            <!-- Tombol Back -->
+            <div class="mt-8">
+                <a href="javascript:history.back()" 
+                   class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                    Back
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 
