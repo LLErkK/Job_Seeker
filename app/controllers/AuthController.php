@@ -94,5 +94,13 @@ class AuthController {
         header('Location: /login');
         exit();
     }
+
+    public function showLandingPage(){
+        global $pdo;
+        require_once __DIR__ . '/../models/Job.php';
+        $jobModel = new Job($pdo);
+        $jobs = $jobModel->getRandomJobs();
+        require_once __DIR__ . '/../views/landing.php';
+    }
 }
 ?>

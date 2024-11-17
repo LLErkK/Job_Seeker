@@ -6,7 +6,7 @@
     <?php foreach ($jobs as $job): ?>
         <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
             <!-- Job Details -->
-            <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-center"><?= htmlspecialchars($job['title']) ?></h3>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-center"><?= htmlspecialchars(ucwords(strtolower($job['title']))) ?></h3>
             <p class="mb-2"><strong>Description:</strong> <?= htmlspecialchars($job['description']) ?></p>
             <p class="mb-2"><strong>Location:</strong> <?= htmlspecialchars($job['location']) ?></p>
             <p class="mb-2"><strong>Job Type:</strong> <?= htmlspecialchars($job['job_type']) ?></p>

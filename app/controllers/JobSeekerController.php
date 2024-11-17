@@ -6,7 +6,9 @@ class JobSeekerController{
     public function showProfile() {
         
         $userId = $_SESSION['user_id'];
-    
+        if($_SESSION['user_id']==null){
+            header("Location: /login");
+        }
         require_once __DIR__ . '/../models/profile.php';
         $profileModel = new Profile();
     
@@ -149,6 +151,9 @@ class JobSeekerController{
         exit();
     }
     public function viewApplications(){
+        if($_SESSION['user_id']==null){
+            header("Location: /login");
+        }
         if (isset($_SESSION['user_id'])) {
             $userId = $_SESSION['user_id'];
             require_once __DIR__ . '/../models/JobApllication.php';
@@ -159,7 +164,7 @@ class JobSeekerController{
             // Tampilkan halaman dengan data aplikasi
             require_once '../app/views/job_seeker/view_applications.php';
         } else {
-            echo "Please login first to view your applications.";
+            header("Location: /login");
         }
     }
 }

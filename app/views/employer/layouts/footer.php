@@ -1,4 +1,4 @@
-<footer class="bg-blue-600 text-white text-center py-4">
+<footer class="bg-blue-600 text-white text-center py-4 mt-auto">
         <p>&copy; 2024 Job Portal. All rights reserved.</p>
     </footer>
 </body>

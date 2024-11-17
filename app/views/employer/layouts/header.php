@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 text-gray-800">
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 text-gray-800 ">
 
     <!-- Header dengan gradasi -->
     <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 shadow-lg">

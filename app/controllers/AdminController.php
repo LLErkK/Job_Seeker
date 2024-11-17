@@ -7,6 +7,9 @@ class AdminController{
     public function showAllJob(){
         require_once __DIR__ . '/../models/Job.php';
         global $pdo;
+        if($_SESSION['user_id']==null){
+            header("Location: /login");
+        }
         $employerId = $_SESSION['user_id'];
         $jobModel = new Job($pdo);
         $jobs = $jobModel->getAllJob();
@@ -54,7 +57,9 @@ class AdminController{
         
         require_once __DIR__ . '/../models/Job.php';
         global $pdo;
-        
+        if($_SESSION['user_id']==null){
+            header("Location: /login");
+        }
         $jobModel = new Job($pdo);
     
         // Fetch the job by jobId and employerId

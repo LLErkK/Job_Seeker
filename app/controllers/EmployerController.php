@@ -76,10 +76,8 @@ class EmployerController{
         if (isset($data['application_id']) && isset($data['status'])) {
             $jobApplicationModel = new JobApllication();
             $success = $jobApplicationModel->updateApplicationStatus($data['application_id'], $data['status']);
-
             if ($success) {
-                echo "Application status updated successfully.";
-                header("Location: /employer/applications?job_id=" . $data['job_id']);
+                header("Location: /employer/applications");
                 exit();
             } else {
                 echo "Failed to update application status.";

@@ -343,6 +343,6 @@ if (isset($_SESSION['role'])) {
     // exit();
     require_once '../app/controllers/AuthController.php';
     $authController = new AuthController();
-    $authController->showLoginForm();
+    $authController->showLandingPage();
     exit();
 }
