@@ -39,7 +39,6 @@
                     class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="open" <?= $job['status'] == 'open' ? 'selected' : '' ?>>Open</option>
                     <option value="closed" <?= $job['status'] == 'closed' ? 'selected' : '' ?>>Closed</option>
-                    <option value="pending" <?= $job['status'] == 'pending' ? 'selected' : '' ?>>Pending</option>
                 </select>
             </div>
 

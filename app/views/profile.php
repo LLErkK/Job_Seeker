@@ -31,7 +31,7 @@
                 <p class="flex items-center text-gray-700"><span class="font-bold w-32">Gender:</span> <?= htmlspecialchars($profile['gender'] ?? 'Tidak tersedia') ?></p>
                 <p class="flex items-center text-gray-700"><span class="font-bold w-32">Alamat:</span> <?= htmlspecialchars($profile['alamat'] ?? 'Tidak tersedia') ?></p>
                 <p class="flex items-center text-gray-700"><span class="font-bold w-32">Pendidikan:</span> <?= htmlspecialchars($profile['riwayat_pendidikan'] ?? 'Tidak tersedia') ?></p>
-                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Pekerjaan:</span> <?= htmlspecialchars($profile['riwayat_pekerjaan'] ?? 'Tidak tersedia') ?></p>
+                <p class="flex items-center text-gray-700"><span class="font-bold w-32">Riwayat Pekerjaan:</span> <?= htmlspecialchars($profile['riwayat_pekerjaan'] ?? 'Tidak tersedia') ?></p>
                 <p class="flex items-center text-gray-700"><span class="font-bold w-32">Deskripsi:</span> <?= htmlspecialchars($profile['deskripsi'] ?? 'Tidak tersedia') ?></p>
             </div>
 

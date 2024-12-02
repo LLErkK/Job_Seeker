@@ -24,10 +24,10 @@ class Job{
         return $stmt->execute();
     }
 
-    public function getRandomJobs($limit = 10){
-        $query = "SELECT * FROM jobs ORDER BY RAND() LIMIT :limit";
+    public function getRandomJobs(){
+        $query = "SELECT * FROM jobs WHERE status = 'open' ";
         $stmt = $this->pdo->prepare($query);
-        $stmt->bindValue(':limit',$limit,PDO::PARAM_INT);
+    
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -121,23 +121,24 @@ class Job{
     }
 
     public function getRandomJobsByType($jobType = '') {
-        $query = "SELECT * FROM jobs";
-
-        // Jika ada filter job_type, tambahkan WHERE clause
+        $query = "SELECT * FROM jobs WHERE status = 'open'";
+    
+        // Jika ada filter job_type, tambahkan kondisi dengan AND
         if ($jobType) {
-            $query .= " WHERE job_type = :job_type";
+            $query .= " AND job_type = :job_type";
         }
-
+    
         $stmt = $this->pdo->prepare($query);
-
+    
         // Jika job_type diberikan, bind param
         if ($jobType) {
             $stmt->bindParam(':job_type', $jobType);
         }
-
+    
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 
     public function getJobByIdAndEmployer($jobId, $employerId) {
         $stmt = $this->pdo->prepare("SELECT * FROM jobs WHERE id = :jobId AND employer_id = :employerId");

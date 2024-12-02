@@ -7,7 +7,6 @@
         <form action="/job_seeker/jobs" method="GET" class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
             <label for="job_type" class="text-lg font-semibold text-gray-700">Filter by Job Type:</label>
             <select name="job_type" id="job_type" class="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500">
-                <option value="">All</option>
                 <option value="intern" <?= isset($_GET['job_type']) && $_GET['job_type'] == 'intern' ? 'selected' : '' ?>>Intern</option>
                 <option value="full-time" <?= isset($_GET['job_type']) && $_GET['job_type'] == 'full-time' ? 'selected' : '' ?>>Full-time</option>
             </select>
@@ -19,7 +18,8 @@
         <!-- Job Listings -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php if (!empty($jobs)): ?>
-                <?php foreach ($jobs as $job): ?>
+                <?
+                    foreach ($jobs as $job): ?>
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-black capitalize">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center capitalize"><?= htmlspecialchars($job['title']) ?></h3>
                         <p class="mb-2"><strong class="text-gray-800">Description: </strong> <?= htmlspecialchars($job['description']) ?></p>

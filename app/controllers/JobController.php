@@ -39,6 +39,7 @@ class JobController{
         if (isset($_SESSION['user_id']) && isset($data['job_id'])) {
             $userId = $_SESSION['user_id'];
             $jobId = $data['job_id'];
+            
             require_once __DIR__ . '/../models/JobApllication.php';
             $jobApplicationModel = new JobApllication();
 

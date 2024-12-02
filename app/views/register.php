@@ -50,7 +50,6 @@
                     class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-200 ease-in-out">
                     <option value="job_seeker">Job Seeker</option>
                     <option value="employer">Employer</option>
-                    <option value="admin">Admin</option>
                 </select>
             </div>
 
