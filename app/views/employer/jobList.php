@@ -5,7 +5,7 @@
     <h2 class="text-4xl font-semibold text-purple-700 mb-10 text-center">JOB LIST</h2>
 
     <!-- Tabel Daftar Pekerjaan -->
-    <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
+    <div class="overflow-x-auto bg-white shadow-lg rounded-lg capitalize">
         <table class="min-w-full bg-white border border-gray-200 rounded-lg">
             <thead>
                 <tr class="bg-gradient-to-r from-blue-600 to-purple-600 text-white">

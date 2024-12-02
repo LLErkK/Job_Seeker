@@ -20,14 +20,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php if (!empty($jobs)): ?>
                 <?php foreach ($jobs as $job): ?>
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center"><?= htmlspecialchars($job['title']) ?></h3>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-black capitalize">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center capitalize"><?= htmlspecialchars($job['title']) ?></h3>
                         <p class="mb-2"><strong class="text-gray-800">Description: </strong> <?= htmlspecialchars($job['description']) ?></p>
                         <p class="mb-2"><strong class="text-gray-800">Company Name: </strong><?= htmlspecialchars($job['company_name']) ?></p>
-                        <p class="mb-2"><strong class="text-gray-800">Type: </strong><?= htmlspecialchars($job['job_type']) ?></p>                          
+                        <p class="mb-2"><strong class="text-gray-800">Type: </strong><?= htmlspecialchars($job['job_type']) ?></p>
                         <p class="mb-2"><strong class="text-gray-800">Location:</strong> <?= htmlspecialchars($job['location']) ?></p>
                         <p class="mb-4"><strong class="text-gray-800">Salary:</strong> <?= htmlspecialchars($job['salary']) ?></p>
-    
+
                         <form action="/job_seeker/apply" method="POST">
                             <input type="hidden" name="job_id" value="<?= $job['id'] ?>">
                             <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-300">
@@ -35,6 +35,7 @@
                             </button>
                         </form>
                     </div>
+
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="col-span-full text-center">

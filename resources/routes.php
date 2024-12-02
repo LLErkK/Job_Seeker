@@ -242,6 +242,12 @@ if ($_SERVER['REQUEST_URI'] == '/job_seeker/applications' && $_SERVER['REQUEST_M
 }
 
 //Route untuk admin
+if($_SERVER['REQUEST_URI']=='/admin/history' && $_SERVER['REQUEST_METHOD']=='GET'){
+    require_once '../app/controllers/AdminController.php';
+    $adminController = new AdminController();
+    $adminController->showAdminHistory();
+    exit();
+}
 //menampilkan manage job'
 if($_SERVER['REQUEST_URI']=='/admin/jobs' && $_SERVER['REQUEST_METHOD']=='GET'){
     require_once '../app/controllers/AdminController.php';

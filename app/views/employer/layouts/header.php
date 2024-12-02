@@ -10,7 +10,7 @@
 <body class="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 text-gray-800 ">
 
     <!-- Header dengan gradasi -->
-    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 shadow-lg">
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 shadow-lg ">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Judul -->
             <h1 class="text-3xl font-bold">Welcome to Job Portal</h1>

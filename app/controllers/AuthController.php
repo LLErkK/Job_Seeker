@@ -83,8 +83,8 @@ class AuthController {
             }
             exit();
         } else {
-
-            header('Location: /login?error=invalid_credentials');
+            echo"<script> alert('Akun Tidak Ditemukan!'); window.history.back();</script> ";
+            // header('Location: /login?error=invalid_credentials');
             exit();
         }
     }

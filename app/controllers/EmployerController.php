@@ -57,6 +57,14 @@ class EmployerController{
         if ($success) {
             echo "Job posting created successfully.";
             header("Location: /employer/jobs");  // Redirect ke halaman daftar lowongan pekerjaan
+            
+            require_once __DIR__ .'/../models/Histori.php';
+            $historiModel = new Histori($pdo);
+
+            $status = $historiModel->createHistory($_SESSION['username'],"create",$title);
+            if(!$status){
+                die("eror");
+            }
             exit();
         } else {
             echo "Failed to create job posting.";
@@ -75,8 +83,10 @@ class EmployerController{
     public function updateApplicationStatus($data) {
         if (isset($data['application_id']) && isset($data['status'])) {
             $jobApplicationModel = new JobApllication();
+            
             $success = $jobApplicationModel->updateApplicationStatus($data['application_id'], $data['status']);
             if ($success) {
+                
                 header("Location: /employer/applications");
                 exit();
             } else {
@@ -128,6 +138,14 @@ class EmployerController{
     
         // Panggil method untuk update job berdasarkan jobId
         $jobModel->updateJobById($jobId, $title, $description, $job_type, $status, $salary, $location, $deadline);
+        global $pdo;
+                require_once __DIR__ .'/../models/Histori.php';
+                $historiModel = new Histori($pdo);
+
+                $status = $historiModel->createHistory($_SESSION['username'],"update",$title);
+                if(!$status){
+                    die("eror");
+                }
         echo "Job Berhasil DiUpdate";
         header("Location: /employer/jobs");  // Redirect ke halaman daftar lowongan pekerjaan
         exit();
@@ -147,11 +165,18 @@ class EmployerController{
 
         // Check if the job belongs to the logged-in employer
         $job = $jobModel->getJobByIdAndEmployer($jobId, $employerId);
-
+        
         if ($job) {
             // Delete the job from the database
             $jobModel->deleteJobById($jobId);
-            
+            global $pdo;
+                require_once __DIR__ .'/../models/Histori.php';
+                $historiModel = new Histori($pdo);
+
+                $status = $historiModel->createHistory($_SESSION['username'],"delete",$job['title']);
+                if(!$status){
+                    die("eror");
+                }
             // Redirect back to the job list after successful deletion
             header("Location: /employer/jobs");
             exit();

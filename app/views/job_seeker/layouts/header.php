@@ -7,9 +7,9 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 min-h-screen flex flex-col">
+<body class=" min-h-screen flex flex-col">
     <!-- Header Section -->
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 py-4 shadow-lg">
+    <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-600 to-indigo-700 py-4 shadow-lg">
         <div class="container mx-auto p-4 flex justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold text-white">Welcome, Job Seeker!</h1>

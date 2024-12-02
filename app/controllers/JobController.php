@@ -76,7 +76,7 @@ class JobController{
                 $success = $jobApplicationModel->applyForJob($jobId, $userId);
 
                 if ($success) {
-                    echo "Application submitted successfully!";
+                    header("Location: /job_seeker/jobs");
                 } else {
                     echo "Failed to submit application.";
                 }

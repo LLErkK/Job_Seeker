@@ -4,7 +4,7 @@
     <h2 class="text-3xl font-bold text-center text-purple-600 mb-8">Job Listings and Applications</h2>
 
     <?php foreach ($jobs as $job): ?>
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-8 capitalize">
             <!-- Job Details -->
             <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-center"><?= htmlspecialchars(ucwords(strtolower($job['title']))) ?></h3>
             <p class="mb-2"><strong>Description:</strong> <?= htmlspecialchars($job['description']) ?></p>

@@ -79,17 +79,18 @@
             <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
                 Update Profile
             </button>
-        </form>
-
-        <!-- Delete Profile Section -->
-        <div class="mt-10 p-4 bg-white rounded-xl shadow-lg max-w-lg mx-auto">
-            <h2 class="text-xl font-bold text-red-600 mb-4 text-center">Delete Profile</h2>
             <form action="/job_seeker/delete-profile" method="POST" onsubmit="return confirm('Are you sure you want to delete your profile? This action cannot be undone!');">
                 <button type="submit" class="w-full py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-200">
                     Delete Profile
                 </button>
             </form>
-        </div>
+        </form>
+
+        <!-- Delete Profile Section -->
+        <!-- <div class="mt-10 p-4 bg-white rounded-xl shadow-lg max-w-lg mx-auto">
+            <h2 class="text-xl font-bold text-red-600 mb-4 text-center">Delete Profile</h2>
+            
+        </div> -->
 
         <!-- Back Button -->
         <div class="mt-8 text-center">

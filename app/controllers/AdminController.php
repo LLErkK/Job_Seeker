@@ -4,6 +4,24 @@ class AdminController{
         require_once __DIR__ . '/../views/admin/dashboard.php';
     }
 
+    public function showAdminHistory() {
+        require_once __DIR__ . '/../models/Histori.php';
+        global $pdo;
+        $modelHistori = new Histori($pdo);
+        
+        // Error handling for retrieving data
+        try {
+            $data = $modelHistori->getAllHistory();
+        } catch (Exception $e) {
+            // Handle error (e.g., log the error or set a message)
+            $data = [];
+        }
+    
+        // Pass data to view
+        require_once __DIR__ . '/../views/admin/history.php';
+    }
+    
+
     public function showAllJob(){
         require_once __DIR__ . '/../models/Job.php';
         global $pdo;
@@ -103,5 +121,7 @@ class AdminController{
         require_once __DIR__ .'/../models/Job.php';
         $jobModel = new Job($pdo);
         $jobModel->deleteJobById($jobId);
+        
     }
+
 }
